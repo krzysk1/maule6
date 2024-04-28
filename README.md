@@ -1,5 +1,5 @@
 # maule6
-Maule M-6 for Aerofly FS4
+Maule M-6-235 for Aerofly FS4
 
 The Maule is a family of single-engine light aircraft that has been manufactured in the United States since the mid-1980s.
  
