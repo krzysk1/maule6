@@ -1,0 +1,124 @@
+<[file][][]
+    <[modelmanager][][]
+        <[pointer_list_tmgraphics][DynamicObjects][]
+		
+            // LeftGear
+            <[rigidbody][LeftGear][]
+                <[float64][Mass][17.4]>
+                <[tmvector3d][InertiaLength][ 0.500 0.158 0.500 ]>
+                <[tmvector3d][R0][0.421 1.079 -1.003]>
+                <[tmmatrix3d][B0][1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0]>
+            >
+            <[multibody_joint][JointFuselageLeftGear][]
+                <[string8][Body0][Fuselage]>
+                <[string8][Body1][LeftGear]>
+                <[tmvector3d][X0][0.0 0.0 1.0]>
+                <[tmvector3d][R0][ 0.421 1.079 -1.003 ]>
+                <[float64][Kp][429000.64991]>
+                <[float64][Kd][858.6499]>
+                <[uint32][Type][1]>
+            >
+
+            // RightGear
+            <[rigidbody][RightGear][]
+                <[float64][Mass][17.4]>
+                <[tmvector3d][InertiaLength][ 0.500 0.158 0.500 ]>
+                <[tmvector3d][R0][0.421 -1.079 -1.003]>
+                <[tmmatrix3d][B0][1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0]>
+            >
+            <[multibody_joint][JointFuselageRightGear][]
+                <[string8][Body0][Fuselage]>
+                <[string8][Body1][RightGear]>
+                <[tmvector3d][X0][0.0 0.0 1.0]>
+                <[tmvector3d][R0][ 0.421 -1.079 -1.003 ]>
+                <[float64][Kp][429000.64991]>
+                <[float64][Kd][858.6499]>
+                <[uint32][Type][1]>
+            >
+
+            // TailGear
+            <[rigidbody][TailGear][]
+                <[float64][Mass][4.6]>
+                <[tmvector3d][InertiaLength][ 0.244 0.085 0.640 ]>
+                <[tmvector3d][R0][-4.157 0.000 -0.300]>
+                <[tmmatrix3d][B0][0.642788 0.0 -0.766044 0.0 1.0 0.0 0.766044 0.0 0.642788]>
+            >
+            <[multibody_joint][JointFuselageTailGear][]
+                <[string8][Body0][Fuselage]>
+                <[string8][Body1][TailGear]>
+                <[tmvector3d][X0][0.0 0.0 1.0]>
+                <[tmvector3d][R0][ -3.959 0.000 -0.134 ]>
+                <[string8][InputLock][1.0]>
+                <[string8][InputPosition][ServoSteering.Output]>
+                <[string8][InputLock][1.0]>
+                <[uint32][Type][0]>
+            >
+
+            <[wheel][LeftWheelHull][]
+                <[float64][K][171600.0]>
+                <[float64][D][1287.0]>
+                <[float64][Radius][0.284]>
+                <[float64][Width][0.158]>
+                <[float64][RimRadius][0.125]>
+                <[float64][Inflation][324400.0]>
+                <[string8][Body][LeftGear]>
+                <[tmvector3d][R0][0.316 0.903 -0.965]>
+                <[tmvector3d][X0][ 1.000 0.000 0.0 ]>
+                <[string8][InputBrake][LeftBrakeInput.Output]>
+                <[float64][BrakeStrength][0.68]>
+            >
+            <[output][GroundRollSpeedLeftWheel][]
+                <[string8][Input][LeftWheelHull.Speed]>
+            >
+            <[output][GroundRollLoadLeftWheel][]
+                <[string8][Input][LeftWheelHull.Load]>
+            >
+            <[wheel][RightWheelHull][]
+                <[float64][K][171600.0]>
+                <[float64][D][1287.0]>
+                <[float64][Radius][0.284]>
+                <[float64][Width][0.158]>
+                <[float64][RimRadius][0.125]>
+                <[float64][Inflation][324400.0]>
+                <[string8][Body][RightGear]>
+                <[tmvector3d][R0][0.316 -0.903 -0.965]>
+                <[tmvector3d][X0][ 1.000 0.000 0.0 ]>
+                <[string8][InputBrake][RightBrakeInput.Output]>
+                <[float64][BrakeStrength][0.68]>
+            >
+            <[output][GroundRollSpeedRightWheel][]
+                <[string8][Input][RightWheelHull.Speed]>
+            >
+            <[output][GroundRollLoadRightWheel][]
+                <[string8][Input][RightWheelHull.Load]>
+            >
+            <[wheel][TailWheelHull][]
+                <[float64][K][44400.0]>
+                <[float64][D][333.0]>
+                <[float64][Radius][0.141]>
+                <[float64][Width][0.085]>
+                <[float64][RimRadius][0.061]>
+                <[float64][Inflation][239600.0]>
+                <[string8][Body][TailGear]>
+                <[tmvector3d][R0][-4.305 0.000 -0.365]>
+                <[tmvector3d][X0][ 1.000 0.000 0.0 ]>
+            >
+            <[output][GroundRollSpeedTailWheel][]
+                <[string8][Input][TailWheelHull.Speed]>
+            >
+            <[output][GroundRollLoadTailWheel][]
+                <[string8][Input][TailWheelHull.Load]>
+            >
+			
+
+        >
+        <[pointer_list_tmgraphics][GraphicObjects][]
+
+            <[rigidbodygraphics][Wheels][]
+				<[string8][GeometryList][ Wheels ]>
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+            >			
+        >
+    >
+>

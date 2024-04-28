@@ -1,0 +1,8 @@
+<[file][][]
+	<[object][][]
+		<[string8][Description][Amphibious]>
+		<[string8][Type][hidden]>
+		<[string8][Tags][undercarriage]>
+        <[vec32array][ContactSpheres][ (1.488 0.000 -1.059 0.195) (-0.369 1.164 -0.972 0.250) (-0.369 -1.164 -0.972 0.250) ]>
+	>
+>
