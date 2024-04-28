@@ -4,7 +4,7 @@
         <[vec32array][ContactSpheres][ (0.316 -0.903 -0.965 0.284) (0.316 0.903 -0.965 0.284) (-4.305 0.000 -0.365 0.141) ]>
         <[string8][ICAO][M7]>
         <[string8][DisplayName][Maule M-6]>
-        <[string8][DisplayNameFull][Maule M-6]>
+        <[string8][DisplayNameFull][Maule M-6-235]>
         <[localized_text_list][Descriptions][]
             <[localized_text][][]
                 <[string8][Language][en]>
