@@ -2,7 +2,7 @@
     <[modelmanager][][]
         <[pointer_list_tmgraphics][DynamicObjects][]
 
-            // LeftGear  -0.3690 -1.164 -0.9720
+            // LeftGear
             <[rigidbody][LeftGear][]
                 <[float64][Mass][17.4]>
                 <[tmvector3d][InertiaLength][ 0.5 0.3 0.7 ]>
@@ -12,10 +12,10 @@
             <[multibody_joint][JointFuselageLeftGear][]
                 <[string8][Body0][Fuselage]>
                 <[string8][Body1][LeftGear]>
-                <[tmvector3d][X0][0.1 0.0 0.0]>
+                <[tmvector3d][X0][1.0 0.0 0.0]>
                 <[tmvector3d][R0][ 0.2907 0.4835 -0.4052 ]>
                 <[float64][Kp][20000.0]>
-                <[float64][Kd][400.0]>
+                <[float64][Kd][300.0]>
                 <[uint32][Type][0]>
             >
             <[wheel][LeftWheelHull][]
@@ -47,10 +47,10 @@
             <[multibody_joint][JointFuselageRightGear][]
                 <[string8][Body0][Fuselage]>
                 <[string8][Body1][RightGear]>
-                <[tmvector3d][X0][0.1 0.0 0.0]>
+                <[tmvector3d][X0][1.0 0.0 0.0]>
                 <[tmvector3d][R0][ 0.2907 -0.4835 -0.4052 ]>
                 <[float64][Kp][20000.0]>
-                <[float64][Kd][400.0]>
+                <[float64][Kd][300.0]>
                 <[uint32][Type][0]>
             >
             <[wheel][RightWheelHull][]
@@ -84,8 +84,8 @@
                 <[string8][Body1][TailGear]>
                 <[tmvector3d][R0][ -3.934 0.000 -0.171 ]>
                 <[tmvector3d][X0][ 0.0 1.0 0.0 ]>
-                <[float64][Kp][1000]>
-                <[float64][Kd][40]>
+                <[float64][Kp][4000.0]>
+                <[float64][Kd][100.0]>
                 <[uint32][Type][0]>
             >
             <[rigidbody][TailGearLower][]
@@ -98,9 +98,9 @@
                 <[string8][Body0][TailGear]>
                 <[string8][Body1][TailGearLower]>
                 <[tmvector3d][R0][ -4.148 0.000 -0.2294 ]>
-                <[tmvector3d][X0][ 0.0 0.0 -1.0 ]>
-                <[float64][Kp][100.0]>
-                <[float64][Kd][1.0]>
+                <[tmvector3d][X0][ 0.0 0.0 1.0 ]>
+                <[float64][Kp][3000.0]>
+                <[float64][Kd][50.0]>
                 <[uint32][Type][0]>
                 <[string8][InputPosition][ServoSteering.Output]>
             >

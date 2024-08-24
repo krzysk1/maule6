@@ -1136,7 +1136,7 @@
         <[pointer_list_tmgraphics][GraphicObjects][]
 
             <[rigidbodygraphics][Fuselage][]
-				<[string8][GeometryList][ Fuselage GlassExterior GlassInterior Stabilizer RudderSupport Nacelle LeftAileronLink RightAileronLink LeftDoor LeftDoorLevers RightDoor RightDoorLevers RearDoors Antenna Antennas FootStands ]>
+				<[string8][GeometryList][ Fuselage GlassExterior GlassInterior Stabilizer RudderSupport Nacelle LeftAileronLink RightAileronLink LeftDoor LeftDoorLevers RightDoor RightDoorLevers RearDoors Antenna Antennas FootStands GearDetails ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
             >
