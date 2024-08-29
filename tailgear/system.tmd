@@ -14,7 +14,7 @@
                 <[string8][Body1][LeftGear]>
                 <[tmvector3d][X0][1.0 0.0 0.0]>
                 <[tmvector3d][R0][ 0.2907 0.4835 -0.4052 ]>
-                <[float64][Kp][20000.0]>
+                <[float64][Kp][100000.0]>
                 <[float64][Kd][300.0]>
                 <[uint32][Type][0]>
             >
@@ -49,7 +49,7 @@
                 <[string8][Body1][RightGear]>
                 <[tmvector3d][X0][1.0 0.0 0.0]>
                 <[tmvector3d][R0][ 0.2907 -0.4835 -0.4052 ]>
-                <[float64][Kp][20000.0]>
+                <[float64][Kp][100000.0]>
                 <[float64][Kd][300.0]>
                 <[uint32][Type][0]>
             >
@@ -84,8 +84,8 @@
                 <[string8][Body1][TailGear]>
                 <[tmvector3d][R0][ -3.934 0.000 -0.171 ]>
                 <[tmvector3d][X0][ 0.0 1.0 0.0 ]>
-                <[float64][Kp][4000.0]>
-                <[float64][Kd][100.0]>
+                <[float64][Kp][4400]>
+                <[float64][Kd][250]>
                 <[uint32][Type][0]>
             >
             <[rigidbody][TailGearLower][]
