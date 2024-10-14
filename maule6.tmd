@@ -1407,7 +1407,7 @@
                 <[string8][Graphics0][Fuselage]>
                 <[string8][Graphics1][Rudder]>
                 <[string8][GeometryList][ RudderLinkLeft ]>
-                <[tmvector3d][Joint0][-3.774 0.06111 -0.1050]>
+                <[tmvector3d][Joint0][-3.819 0.06070 -0.1030]>
                 <[tmvector3d][Joint1][-3.989 0.05123 -0.1022]>
                 <[uint32][AttachTo][1]>
             >
@@ -1415,7 +1415,7 @@
                 <[string8][Graphics0][Fuselage]>
                 <[string8][Graphics1][Rudder]>
                 <[string8][GeometryList][ RudderLinkRight ]>
-                <[tmvector3d][Joint0][-3.774 -0.06111 -0.1050]>
+                <[tmvector3d][Joint0][-3.819 -0.06070 -0.10300]>
                 <[tmvector3d][Joint1][-3.989 -0.05123 -0.1022]>
                 <[uint32][AttachTo][1]>
             >
