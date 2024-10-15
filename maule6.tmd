@@ -1431,11 +1431,45 @@
             <[rigidbodygraphics][Cockpit][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-				<[string8][GeometryList][ Cockpit PilotSeat SeatsBelts LuggageNet Panel Instruments FlapLever LeftYoke RightYoke LeftPilotPedal RightPilotPedal LeftCopilotPedal RightCopilotPedal FuelSelector FlavorTree ]>
-//                <[string8][InputLuminance][InstrumentLighting.Output]>
+				<[string8][GeometryList][ Cockpit PilotSeat SeatsBelts LuggageNet Panel Instruments GaugeGlass FlapLever LeftYoke RightYoke LeftPilotPedal RightPilotPedal LeftCopilotPedal RightCopilotPedal FuelSelector ]>
                 <[string8][InputIllumination0][PanelLighting.Output]>
             >
-
+			
+			// flavor tree
+            <[graphics_input][FlavorTreeBankInput][]
+                <[uint32][InputID][BankAngle.Output]>
+                <[float64][Scaling][57.295779]>
+            >
+            <[graphics_linear_interpolation][FlavorTreeBankMapping][]
+                <[string8][Input][FlavorTreeBankInput.Output]>
+                <[tmvector2d][Map][(-90 1.570796) (60 -1.047198)]>
+            >
+            <[graphics_rotation][FlavorTreeBankTransform][]
+                <[uint32][Input][FlavorTreeBankMapping.Output]>
+                <[tmvector3d][Axis][1.0 0.0 0.0]>
+                <[tmvector3d][Pivot][0.2528 0.052 0.0845]>
+            >
+            <[graphics_input][FlavorTreePitchInput][]
+                <[uint32][InputID][PitchAngle.Output]>
+                <[float64][Scaling][57.295779]>
+            >
+            <[graphics_linear_interpolation][FlavorTreePitchMapping][]
+                <[string8][Input][FlavorTreePitchInput.Output]>
+                <[tmvector2d][Map][(3 0.052360) (90 1.570796)]>
+            >
+            <[graphics_rotation][FlavorTreePitchTransform][]
+                <[uint32][Input][FlavorTreePitchMapping.Output]>
+                <[tmvector3d][Axis][0.0 1.0 0.0]>
+                <[tmvector3d][Pivot][0.2528 0.052 0.0845]>
+                <[string8][InputTransform][FlavorTreeBankTransform.Output]>
+            >
+            <[rigidbodygraphics][FlavorTree][]
+                <[string8][GeometryList][ FlavorTree ]>
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[string8][InputTransform][FlavorTreePitchTransform.Output]>
+            >
+			
             // pilot body animation
             <[graphics_input][RightHandInput][]
                 <[uint32][InputID][ServoThrottle.Output]>
