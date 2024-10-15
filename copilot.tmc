@@ -1,6 +1,6 @@
 <[file][][]
     <[hints][][]
-        // Maule M-7
+        // Maule M-6
         <[float64][MaximumTakeOffMass][1134.0]>
         <[float64][WingSpan][9.92]>
         <[float64][WingArea][16.79]>
@@ -29,7 +29,7 @@
               <[float64][FlapPosition][0.67]>
               <[float64][MinimumSpeed][24.8]>
               <[float64][OptimumSpeed][28.2]>
-              <[float64][MaximumSpeed][17.9]>
+              <[float64][MaximumSpeed][41.5]>
               <[bool][TakeOff][false]>
               <[bool][Landing][true]>
            >

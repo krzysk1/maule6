@@ -8,7 +8,7 @@
     // This model is free for Personal Use only (Students).
     // Any use in commercial subject requires a Premium membership on RigModels.com
 	// 
-	// Date: Wed Jan 17 2024; Aug 2024
+	// Date: Wed Jan 17 2024; Aug 2024; Oct 2024
 	//-------------------------------------
 
     <[modelmanager][][]
@@ -17,7 +17,7 @@
             // telemetry
             <[telemetry][Telemetry][]
                 <[string8][Body][Fuselage]>
-                <[tmvector3d][LookAtPosition][ 0.0 0.0 0.0 ]>  //mass: 969.0  cm=(-0.082 0.000 -0.014)
+                <[tmvector3d][LookAtPosition][ 0.0 0.0 0.0 ]>  //mass: 968.8  cm=(-0.083 0.000 -0.007)
             >
 
             // cameras start
@@ -481,341 +481,8 @@
 
 
             // aerodynamics end
-
-            // control inputs
-
-            <[input_control][CheckInput][]
-                <[tmvector2d][Range][ 0.0 1.0 ]>
-                <[string8][Message][Controls.HookRelease]>
-            >
-            <[input_lever][ThrottleInput][]
-                <[string8][Message][Controls.Throttle1]>
-		           <[tmvector2d][Range][0.0 1.0]>
-            >
-            <[sender][SenderThrottlePosition][]
-                <[string8][Input][ThrottleInput.Output]>
-                <[string8][Message][Aircraft.Throttle]>
-            >
-            <[input_lever][MixtureInput][]
-                <[string8][Message][Controls.Mixture1]>
-                <[tmvector2d][Range][ 0.0 1.0 ]>
-                <[uint][Positions][21]>
-                <[float64][Value][1.0]>
-            >
-            <[input_lever][PropSpeedInput][]
-                <[string8][Message][Controls.PropellerSpeed1]>
-                <[tmvector2d][Range][ 0.0 1.0 ]>
-                <[uint][Positions][21]>
-                <[float64][Value][1.0]>
-            >
-            <[input_control][AileronInput][]
-                <[tmvector2d][Range][ -1.0 1.0 ]>
-                <[string8][Message][Controls.Roll.Input]>
-            >
-            <[sender][SenderAileronPosition][]
-                <[string8][Input][AileronInput.Output]>
-                <[string8][Message][Aircraft.Aileron]>
-            >
-            <[input_control][ElevatorInput][]
-                <[tmvector2d][Range][ -1.0 1.0 ]>
-                <[string8][Message][Controls.Pitch.Input]>
-            >
-            <[sender][SenderPitchPosition][]
-                <[string8][Input][ElevatorInput.Output]>
-                <[string8][Message][Aircraft.Elevator]>
-            >
-            <[input_control][RudderInput][]
-                <[tmvector2d][Range][ -1.0 1.0 ]>
-                <[string8][Message][Controls.Yaw.Input]>
-            >
-            <[sender][SenderRudderPosition][]
-                <[string8][Input][RudderInput.Output]>
-                <[string8][Message][Aircraft.Rudder]>
-            >
-            <[input_lever]][FlapsInput][]
-                <[string8][Message][Controls.Flaps]>
-                <[uint][Positions][4]>
-            >
-            <[linear_interpolation][FlapsMapping][]
-                <[string8][Input][FlapsInput.Output]>
-                <[tmvector2d][Map][ (0.0 -0.122173) (0.33 0.0) (0.67 0.418879) (1.00 0.698132) ]>
-            >
-            <[sender][SenderFlapPosition][]
-                <[string8][Input][FlapsMapping.Output]>
-                <[string8][Message][Aircraft.Flaps]>
-            >
-            <[sender][SenderFlapSetting][]
-                <[string8][Input][FlapsInput.Output]>
-                <[string8][Qualifiers][setting]>
-                <[string8][Message][Aircraft.Flaps]>
-            >
-            <[sender][SenderFlapMaximum][]
-                <[string8][Input][0.698132]>
-                <[string8][Message][Aircraft.Flaps]>
-                <[string8][Qualifiers][maximum]>
-            >
-            <[input_default][BrakeInput][]
-                <[string8][Message][Controls.WheelBrake]>
-            >
-            <[input_default][LeftBrakeInput][]
-                <[string8][Message][Controls.WheelBrake.Left]>
-            >
-            <[input_default][RightBrakeInput][]
-                <[string8][Message][Controls.WheelBrake.Right]>
-            >
-            <[input_binary][ParkingBrakeInput][]
-                <[string8][Message][Controls.ParkingBrake]>
-                <[float64][Value][0.0]>
-            >
-            <[sender][SenderParkingBrake][]
-                <[string8][Input][ParkingBrakeInput.Output]>
-                <[string8][Message][Aircraft.ParkingBrake]>
-            >
-            <[input_default][ElevatorTrimInput][]
-                <[string8][Message][Controls.Trim]>
-                <[uint][Positions][201]>
-                <[tmvector2d][Range][ -1.0 1.0 ]>
-                <[float64][Value][0.0]>
-                <[float64][Speed][0.125]>
-            >
-            <[sender][SenderTrim][]
-                <[string8][Input][ElevatorTrimInput.Output]>
-                <[string8][Message][Aircraft.Trim]>
-            >
-            <[output_free][ElevatorTrimInputOutput][]
-                <[string8][Input][ElevatorTrimInput.Output]>
-            >
-            <[sender][SenderPitchTrimPosition][]
-                <[string8][Input][ElevatorTrimInput.Output]>
-                <[string8][Message][Aircraft.PitchTrim]>
-                <[string8][Qualifiers][ normalized ]>
-            >
-            <[input_default][AileronTrimInput][]
-                <[string8][Message][Controls.AileronTrim]>
-                <[uint][Positions][201]>
-                <[tmvector2d][Range][ -1.0 1.0 ]>
-                <[float64][Value][0.0]>
-                <[float64][Speed][0.125]>
-            >
-            <[input_default][RudderTrimInput][]
-                <[string8][Message][Controls.RudderTrim]>
-                <[uint][Positions][201]>
-                <[tmvector2d][Range][ -1.0 1.0 ]>
-                <[float64][Value][0.0]>
-                <[float64][Speed][0.125]>
-            >
-
-            // servos
-
-            <[servolinear][ServoCheck][]
-                <[string8][Input][CheckInput.Output]>
-                <[float64][OutputSpeed][1.0]>
-                <[float64][Position][0.0]>
-                <[float64array][InputPosition][  0.0 1.0 ]>
-                <[float64array][OutputPosition][ 0.0 1.0 ]>
-            >
-            <[output_free][ServoCheckOutput][]
-                <[string8][Input][ServoCheck.Output]>
-            >
-            <[servoclassic][ServoBrake][]
-                <[string8][Input][BrakeInput.Output]>
-                <[float64][Speed][10.0]>
-                <[float64][P0][0.0]>
-                <[float64][P1][1.0]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoBrakeOutput][]
-                <[string8][Input][ServoBrake.Output]>
-            >
-            <[servoclassic][ServoLeftBrake][]
-                <[string8][Input][LeftBrakeInput.Output]>
-                <[float64][Speed][10.0]>
-                <[float64][P0][0.0]>
-                <[float64][P1][1.0]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoLeftBrakeOutput][]
-                <[string8][Input][ServoLeftBrake.Output]>
-            >
-            <[servoclassic][ServoRightBrake][]
-                <[string8][Input][RightBrakeInput.Output]>
-                <[float64][Speed][10.0]>
-                <[float64][P0][0.0]>
-                <[float64][P1][1.0]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoRightBrakeOutput][]
-                <[string8][Input][ServoRightBrake.Output]>
-            >
-            <[servoclassic][ParkingBrake][]
-                <[string8][Input][ParkingBrakeInput.Output]>
-                <[float64][Speed][12.0]>
-                <[float64][P0][0.0]>
-                <[float64][P1][1.0]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-                <[float64][Position][0.0]>
-            >
-            <[output_free][ParkingBrakeOutput][]
-                <[string8][Input][ParkingBrake.Output]>
-            >
-            <[servolinear][ServoFlaps][]
-                <[string8][Input][FlapsInput.Output]>
-                <[float64][OutputSpeed][0.500]>
-                <[float64][Position][0.0]>
-                <[float64array][InputPosition][ 0.0 0.33 0.67 1.00 ]>
-                <[float64array][OutputPosition][ -0.122173 0.0 0.418879 0.698132 ]>
-            >
-            <[output_free][ServoFlapsOutput][]
-                <[string8][Input][ServoFlaps.Output]>
-            >
-            <[servoclassic][ServoLeftAileron][]
-                <[string8][Input][AileronInput.Output]>
-                <[float64][Speed][10.000]>
-                <[float64][P0][0.0]>
-                <[float64][P1][0.349066]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoLeftAileronOutput][]
-                <[string8][Input][ServoLeftAileron.Output]>
-            >
-            <[servoclassic][ServoRightAileron][]
-                <[string8][Input][AileronInput.Output]>
-                <[float64][Speed][10.000]>
-                <[float64][P0][0.0]>
-                <[float64][P1][-0.349066]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoRightAileronOutput][]
-                <[string8][Input][ServoRightAileron.Output]>
-            >
-            <[servoclassic][ServoAileronTrim][]
-                <[string8][Input][AileronTrimInput.Output]>
-                <[float64][Speed][0.050]>
-                <[float64][P0][0.0]>
-                <[float64][P1][0.0]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoAileronTrimOutput][]
-                <[string8][Input][ServoAileronTrim.Output]>
-            >
-            <[servoclassic][ServoElevator][]
-                <[string8][Input][ElevatorInput.Output]>
-                <[float64][Speed][10.000]>
-                <[float64][P0][0.0]>
-                <[float64][P1][0.436332]>
-                <[float64][P2][-0.087266]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoElevatorOutput][]
-                <[string8][Input][ServoElevator.Output]>
-            >
-            <[servoclassic][ServoElevatorTrim][]
-                <[string8][Input][ElevatorTrimInput.Output]>
-                <[float64][Speed][0.067]>
-                <[float64][P0][0.0]>
-                <[float64][P1][0.436332]>
-                <[float64][P2][0.226893]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoElevatorTrimOutput][]
-                <[string8][Input][ServoElevatorTrim.Output]>
-            >
-            <[servoclassic][ServoRudder][]
-                <[string8][Input][RudderInput.Output]>
-                <[float64][Speed][10.000]>
-                <[float64][P0][0.0]>
-                <[float64][P1][0.366519]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoRudderOutput][]
-                <[string8][Input][ServoRudder.Output]>
-            >
-            <[servoclassic][ServoRudderTrim][]
-                <[string8][Input][RudderTrimInput.Output]>
-                <[float64][Speed][0.050]>
-                <[float64][P0][0.0]>
-                <[float64][P1][0.837758]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoRudderTrimOutput][]
-                <[string8][Input][ServoRudderTrim.Output]>
-            >
-            <[servoclassic][ServoThrottle][]
-                <[string8][Input][ThrottleInput.Output]>
-                <[float64][Speed][2.000]>
-                <[float64][Position][0.0]>
-                <[float64][P0][0.0]>
-                <[float64][P1][1.0]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoThrottleOutput][]
-                <[string8][Input][ServoThrottle.Output]>
-            >
-            <[servoclassic][ServoMixture][]
-                <[string8][Input][MixtureInput.Output]>
-                <[float64][Speed][2.000]>
-                <[float64][P0][-1.0]>
-                <[float64][P1][2.0]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoMixtureOutput][]
-                <[string8][Input][ServoMixture.Output]>
-            >
-            <[servoclassic][ServoPropRPM][]
-                <[string8][Input][PropSpeedInput.Output]>
-                <[float64][Speed][1.0]>
-                <[float64][P0][0.0]>
-                <[float64][P1][1.0]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoPropRPMOutput][]
-                <[string8][Input][ServoPropRPM.Output]>
-            >
-            <[servolinear][ServoPropSpeed][]
-                <[string8][Input][PropSpeedInput.Output]>
-                <[float64][OutputSpeed][100]>
-                <[float64][Position][283.5]>
-                <[float64array][InputPosition][  0.0 1.0 ]>
-                <[float64array][OutputPosition][ 115 283.5 ]>
-            >
-            <[output_free][ServoPropSpeedOutput][]
-                <[string8][Input][ServoPropSpeed.Output]>
-            >
-            <[servoclassic][ServoSteering][]
-                <[string8][Input][RudderInput.Output]>
-                <[float64][Speed][4.0]>
-                <[float64][P0][0.0]>
-                <[float64][P1][0.261799]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
-            >
-            <[output_free][ServoSteeringOutput][]
-                <[string8][Input][ServoSteering.Output]>
-            >
-
-            <[output][RudderPosition][]
-                <[string8][Input][RudderInput.Output]>
-            >
-            <[output][ElevatorPosition][]
-                <[string8][Input][ElevatorInput.Output]>
-            >
-            <[output][AileronPosition][]
-                <[string8][Input][AileronInput.Output]>
-            >
 			
-            // engines start
+            // propeller start
 
             <[rigidbody][PropellerBody][]
                 <[float64][Mass][22.4]>
@@ -833,7 +500,7 @@
                 <[uint32][Type][0]>
                 <[float64][InitialVelocity][72.0]>
             >
-            <[airfoil][AirfoilPropeller][] //Clark-Y (good propeller).afl   
+            <[airfoil][AirfoilPropeller][] //Clark-Y (good propeller)
                 <[float64][Cl0][0.47]>
                 <[float64][Cd0][0.008200]>
                 <[float64][Cm0][-0.07]>
@@ -870,7 +537,7 @@
             >
             <[governor][Governor][]
                 <[string8][RotationSpeed][DriveShaft.GetRotationSpeed]>
-                <[string8][SpeedControl][ServoPropSpeed.Output]>
+                <[string8][SpeedControl][PropellerSpeedMapping.Output]>
                 <[float64][PitchMinimum][0.165806]>
                 <[float64][PitchMaximum][0.497419]>
             >
@@ -886,60 +553,483 @@
                 <[string8][DamageOnCrash][Propeller.Damage]>
             >
 
-            // Engines
+            // propeller end
 
-            <[engine][Engine][]
-                <[string8][ThrottleControl][ServoThrottle.Output]>
-                <[string8][RotationSpeed][DriveShaft.RotationSpeed]>
+
+            // engines start
+
+            <[sender][SenderThrottlePosition][]
+                <[string8][Input][ThrottleInput.Output]>
+                <[string8][Message][Aircraft.Throttle]>
+            >
+            <[sender][SenderEngineThrottle1][]
+                <[string8][Input][ThrottleInput.Output]>
+                <[string8][Message][Aircraft.EngineThrottle1]>
+            >
+            <[product][NormalizedPropellerSpeed][]
+                <[string8][Inputs][ DriveShaft.RotationSpeed 0.003537 ]>
+            >
+            <[sender][SenderPower][]
+                <[string8][Input][NormalizedPropellerSpeed.Output]>
+                <[string8][Message][Aircraft.Power]>
+                <[string8][Qualifiers][ normalized ]>
+            >
+            <[logic_greater][Engine1MasterSwitch][]
+                <[string8][Input0][Magnetos.Output]>
+                <[string8][Input1][0.5]>
+            >
+            <[sender][SenderEngine1Master][]
+                <[string8][Input][Engine1MasterSwitch.Output]>
+                <[string8][Message][Aircraft.EngineMaster1]>
+                <[string8][Qualifiers][ discrete ]>
+            >
+            <[logic_greater][Engine1Running][]
+                <[string8][Input0][NormalizedPropellerSpeed.Output]>
+                <[string8][Input1][0.2]>
+            >
+            <[sender][SenderEngine1Running][]
+                <[string8][Input][Engine1Running.Output]>
+                <[string8][Message][Aircraft.EngineRunning1]>
+                <[string8][Qualifiers][ discrete ]>
+            >
+			
+            <[engine2][Engine][] //Lycoming IO-540-W1A5 235 HP
+                <[string8][InputThrottle]    [ServoThrottle.Output]>
+                <[string8][InputMixture]     [MixtureLever.Output]>
+                <[string8][InputLeftMagneto] [LeftMagneto.Output]>
+                <[string8][InputRightMagneto][RightMagneto.Output]>
+                <[string8][RotationSpeed]    [DriveShaft.RotationSpeed]>
+                <[string8][AddTorque]        [DriveShaft.AddTorque]>
+                <[string8][AddInertia]       [DriveShaft.AddInertia]>
+                <[string8][InputAngle]       [PropellerJoint.Output]>
+                <[float64][InputTemperature] [EngineHousing.Output]>
+                <[float64][AddHeat]          [EngineHousing.AddHeat]>
                 <[float64][RotationInertia][1.1776]>
                 <[float64][ThrottleIdle][0.1000]>
-                <[string8][AddTorque][DriveShaft.AddTorque]>
-                <[string8][AddInertia][DriveShaft.AddInertia]>
                 <[float64][Friction][50.0]>
-                <[float64][RatedRotationSpeed][270.0]>
-                <[float64][RatedPower][193882]>
-                <[float64][Displacement][0.003495]>
-                <[string8][ThrottleCut][0]>
+                <[float64][RatedRotationSpeed][282.7]>
+                <[float64][RatedPower][175239]>
+                <[float64][Displacement][0.008874]>
             >
             <[output][RotationSpeed][]
                 <[string8][Input][DriveShaft.GetRotationSpeed]>
             >
-            <[product][NormalizedPropellerSpeed][]
-                <[string8][Inputs][ DriveShaft.GetRotationSpeed 0.00370 ]>
+            <[air_flow][CoolingAir][]
+                <[string8][Body][Fuselage]>
             >
-
+            <[cooler][Cooler][]
+                <[string8][InputAirSpeed][CoolingAir.OutputSpeed]>
+                <[string8][InputAirTemperature][CoolingAir.OutputTemperature]>
+                <[string8][InputTemperature][EngineHousing.Output]>
+                <[float64][AddHeat][EngineHousing.AddHeat]>
+            >
+            <[heat_reservoir][EngineHousing][]
+                <[string8][HeatCapacity][1000.0]>
+            >
+            <[output][EngineManifoldPressure][]
+                <[string8][Input][Engine.ManifoldPressure]>
+            >
+			
             <[needle][CylinderHeadTemperature][]
                 <[string8][Input][443.15]>
                 <[float64][Speed][20.0]>
                 <[float64][Damping][0.8]>
             >
-            <[needle][OilTemperature][]
-                <[string8][Input][363.15]>
-                <[float64][Speed][20.0]>
-                <[float64][Damping][0.8]>
+			
+            // engine oil temperature
+            <[linear_interpolation][OilTemperatureInput][]
+                <[string8][Input][DriveShaft.RotationSpeed]>
+                <[tmvector2d][Map][ (0.0 288.15) (52.4 310.9) (104.0 324.8) (209.4 349.8) (282.7 360.9) ]>
             >
-            // engines end
-
-            // animations start
-
-            // canopy
-            <[input_binary][CanopyInput][]
-                <[string8][Message][Controls.Canopy]>
-                <[float64][Value][0.0]>
-            >
-            <[servoclassic][CanopySequence][]
-                <[string8][Input][CanopyInput.Output]>
+            <[servoclassic][EngineOilTemperature][]
+                <[string8][Input][OilTemperatureInput.Output]>
                 <[float64][Speed][0.5]>
+                <[float64][P0][0.0]>
+                <[float64][P1][1.0]>
+                <[float64][Position][324.8]>
+            >
+            <[output_free][EngineOilTemperatureOutput][]
+                <[string8][Input][EngineOilTemperature.Output]>
+            >
+
+            // engine oil pressure
+            <[linear_interpolation][EngineOilPressure][]
+                <[string8][Input][EngineOilTemperature.Output]>
+                <[tmvector2d][Map][ (0.0 0.0) (288.15 0.0) (310.9 689476.0) (324.8 517107.0) (349.8 448159.4) (360.9 413685.6) ]>
+            >
+            <[output_free][EngineOilPressureOutput][]
+                <[string8][Input][EngineOilPressure.Output]>
+            >
+
+            // throttle
+            <[input_lever][ThrottleInput][]
+                <[string8][Message][Controls.Throttle1]>
+            >
+            <[servolinear][ServoThrottle][]
+                <[string8][Input][ThrottleInput.Output]>
+                <[float64][OutputSpeed][15.0]>
+                <[float64][Position][0.0]>
+                <[float64array][InputPosition][   0.0 0.50 1.0 ]>
+                <[float64array][OutputPosition][  0.0 0.78 1.0 ]>
+            >
+            <[output_free][ServoThrottleOutput][]
+                <[string8][Input][ServoThrottle.Output]>
+            >
+
+            // propeller speed
+            <[input_lever][PropellerSpeedInput][]
+                <[string8][Message][Controls.PropellerSpeed1]>
+                <[tmvector2d][Range][ 0.0 1.0 ]>
+                <[uint][Positions][41]>
+                <[float64][Value][1.0]>
+            >
+            <[servolinear][PropellerSpeedLever][]
+                <[string8][Input][PropellerSpeedInput.Output]>
+                <[float64][OutputSpeed][10.0]>
+                <[float64][Position][1.0]>
+                <[float64array][InputPosition][  0.0 1.0 ]>
+                <[float64array][OutputPosition][ 0.0 1.0 ]>
+            >
+            <[output_free][PropellerSpeedLeverOutput][]
+                <[string8][Input][PropellerSpeedLever.Output]>
+            >
+            <[linear_interpolation][PropellerSpeedMapping][]
+                <[string8][Input][PropellerSpeedLever.Output]>
+                <[tmvector2d][Map][ (0.0 115.3) (0.75 241.09) (1.0 283.5) ]>
+            >
+			
+            // mixture
+            <[input_lever][MixtureLever][]
+                <[string8][Message][Controls.Mixture1]>
+                <[tmvector2d][Range][ 0.0 1.0 ]>
+                <[uint][Positions][21]>
+                <[float64][Value][1.0]>
+            >
+            <[output_free][MixtureLeverOutput][]
+                <[string8][Input][MixtureLever.Output]>
+            >
+
+            // magnetos
+            <[input_discrete][Magnetos][]
+                <[string8][Message][Controls.Magnetos1]>
+                <[tmvector2d][Range][ 0.0 3.0 ]>
+                <[float64][Value][3.0]>
+            >
+            <[output_free][MagnetosOutput][]
+                <[string8][Input][Magnetos.Output]>
+            >
+            <[logic_set][LeftMagneto][]
+                <[string8][Input][Magnetos.Output]>
+                <[string8][Set][2 3]>
+            >
+            <[logic_set][RightMagneto][]
+                <[string8][Input][Magnetos.Output]>
+                <[string8][Set][1 3]>
+            >
+			
+            // engines end
+			
+            // primary flight controls start
+
+            // elevator
+            <[input_control][ElevatorInput][]
+                <[string8][Message][Controls.Pitch.Input]>
+                <[tmvector2d][Range][ -1.0 1.0 ]>
+            >
+            <[mixlinear][ElevatorForceTrimmed][]
+                <[string8][Input0][ElevatorInput.Output]>
+                <[string8][Input1][PitchTrim.Output]>
+                <[float64][Weight0][1.0]>
+                <[float64][Weight1][0.4]>
+                <[float64][Offset][0.0]>
+            >
+            <[servoclassic][ServoElevator][]
+                <[string8][Input][ElevatorForceTrimmed.Output]>
+                <[float64][Speed][15.0]>
+                <[float64][P0][0.0]>
+                <[float64][P1][0.436332]>
+                <[float64][P2][-0.087266]>
+                <[float64][P3][0.0]>
+                <[float64][Position][0.0]>
+            >
+            <[output_free][ServoElevatorOutput][]
+                <[string8][Input][ServoElevator.Output]>
+            >
+
+            // pitch trim
+            <[input_default][PitchTrim][]
+                <[string8][Message][Controls.Trim]>
+                <[uint][Positions][201]>
+                <[tmvector2d][Range][ -1.0 1.0 ]>
+                <[float64][Value][0.0]>
+                <[float64][Speed][0.15]>
+            >
+            <[sender][SenderTrim][]
+                <[string8][Input][PitchTrim.Output]>
+                <[string8][Message][Aircraft.Trim]>
+            >
+            <[output_free][PitchTrimOutput][]
+                <[string8][Input][PitchTrim.Output]>
+            >
+            <[linear_interpolation][PitchTrimAngle][]
+                <[string8][Input][PitchTrim.Output]>
+                <[tmvector2d][Map][ (-1.0 0.18325957004) (0.0 0.0) (1.0 -0.104719754308) ]>
+            >
+            <[output][PitchTrimDisplay][]
+                <[string8][Input][PitchTrimAngle.Output]>
+            >			
+            <[sender][SenderPitchTrimPosition][]
+                <[string8][Input][PitchTrimAngle.Output]>
+                <[string8][Message][Aircraft.PitchTrim]>
+            >
+            <[sender][SenderPitchTrimScaling][]
+                <[string8][Input][0.18325957004]>
+                <[string8][Message][Aircraft.PitchTrimScaling]>
+            >
+
+            // aileron
+            <[input_control][AileronInput][]
+                <[string8][Message][Controls.Roll.Input]>
+                <[tmvector2d][Range][ -1.0 1.0 ]>
+            >
+            <[servoclassic][ServoStickAileron][]
+                <[string8][Input][AileronTrimmed.Output]>
+                <[float64][Speed][15.0]>
                 <[float64][P0][0.0]>
                 <[float64][P1][1.0]>
                 <[float64][P2][0.0]>
                 <[float64][P3][0.0]>
                 <[float64][Position][0.0]>
             >
-            <[output_free][CanopySequenceOutput][]
-                <[string8][Input][CanopySequence.Output]>
+            <[output_free][ServoStickAileronOutput][]
+                <[string8][Input][ServoStickAileron.Output]>
+            >
+            <[polynomial][ServoLeftAileron][]
+                <[string8][Input][ServoStickAileron.Output]>
+                <[float64array][Coefficients][ 0.0 0.349066 0.0 ]>
+            >
+            <[polynomial][ServoRightAileron][]
+                <[string8][Input][ServoStickAileron.Output]>
+                <[float64array][Coefficients][ 0.0 -0.349066 0.0 ]>
+            >
+            <[output_free][ServoLeftAileronOutput][]
+                <[string8][Input][ServoLeftAileron.Output]>
+            >
+            <[output_free][ServoRightAileronOutput][]
+                <[string8][Input][ServoRightAileron.Output]>
             >
 
+            // aileron trim
+            <[input_default][AileronTrim][]
+                <[string8][Message][Controls.AileronTrim]>
+                <[uint][Positions][201]>
+                <[tmvector2d][Range][ -1.0 1.0 ]>
+                <[float64][Speed][0.2]>
+            >
+            <[mixlinear][AileronTrimmedMix][]
+                <[string8][Input0][AileronInput.Output]>
+                <[string8][Input1][AileronTrim.Output]>
+                <[float64][Weight0][1.0]>
+                <[float64][Weight1][0.2]>
+                <[float64][Offset][0.0]>
+            >
+            <[clamp][AileronTrimmed][]
+                <[string8][Input][AileronTrimmedMix.Output]>
+                <[tmvector2d][Range][ -1.0 1.0 ]>
+            >
+
+            // rudder
+            <[input_default][RudderInput][]
+                <[string8][Message][Controls.Yaw.Input]>
+                <[tmvector2d][Range][ -1.0 1.0 ]>
+            >
+            <[servoclassic][ServoRudder][]
+                <[string8][Input][RudderTrimmed.Output]>
+                <[float64][Speed][5.0]>
+                <[float64][P0][0.0]>
+                <[float64][P1][0.366519]>
+                <[float64][P2][0.0]>
+                <[float64][P3][0.0]>
+            >
+            <[output_free][ServoRudderOutput][]
+                <[string8][Input][ServoRudder.Output]>
+            >
+            <[servoclassic][ServoSteering][]
+                <[string8][Input][RudderInput.Output]>
+                <[float64][Speed][4.0]>
+                <[float64][P0][0.0]>
+                <[float64][P1][0.261799]>
+                <[float64][P2][0.0]>
+                <[float64][P3][0.0]>
+            >
+
+            // rudder trim
+            <[input_default][RudderTrim][]
+                <[string8][Message][Controls.RudderTrim]>
+                <[uint][Positions][101]>
+                <[tmvector2d][Range][ -1.0 1.0 ]>
+                <[float64][Speed][0.1]>
+            >
+            <[sender][SenderRudderTrimInput][]
+                <[string8][Input][RudderTrim.Output]>
+                <[string8][Message][Aircraft.RudderTrim]>
+            >
+            <[mixlinear][RudderTrimmedMix][]
+                <[string8][Input0][RudderInput.Output]>
+                <[string8][Input1][RudderTrim.Output]>
+                <[float64][Weight0][1.0]>
+                <[float64][Weight1][0.2]>
+                <[float64][Offset][0.0]>
+            >
+            <[clamp][RudderTrimmed][]
+                <[string8][Input][RudderTrimmedMix.Output]>
+                <[tmvector2d][Range][ -1.0 1.0 ]>
+            >
+
+            <[output][RudderPosition][]
+                <[string8][Input][RudderInput.Output]>
+            >
+            <[output][ElevatorPosition][]
+                <[string8][Input][ElevatorInput.Output]>
+            >
+            <[output][AileronPosition][]
+                <[string8][Input][AileronInput.Output]>
+            >
+			
+            // primary fight controls end
+
+
+            // flaps start
+
+            // flap lever
+            <[input_lever][FlapsInput][]
+                <[string8][Message][Controls.Flaps]>
+                <[uint][Positions][4]>
+            >
+            <[linear_interpolation][FlapsMapping][]
+                <[string8][Input][FlapsInput.Output]>
+                <[tmvector2d][Map][ (0.0 -0.122173) (0.33 0.0) (0.67 0.418879) (1.00 0.698132) ]>
+            >
+            <[sender][SenderFlapPosition][]
+                <[string8][Input][FlapsMapping.Output]>
+                <[string8][Message][Aircraft.Flaps]>
+            >
+            <[sender][SenderFlapSetting][]
+                <[string8][Input][FlapsInput.Output]>
+                <[string8][Qualifiers][setting]>
+                <[string8][Message][Aircraft.Flaps]>
+            >
+            <[sender][SenderFlapMaximum][]
+                <[string8][Input][0.698132]>
+                <[string8][Message][Aircraft.Flaps]>
+                <[string8][Qualifiers][maximum]>
+            >
+
+            // flaps
+            <[servoclassic][ServoFlaps][]
+                <[string8][Input][FlapsMapping.Output]>
+                <[float64][Speed][2.0]>
+                <[float64][P0][0.0]>
+                <[float64][P1][1.0]>
+                <[float64][P2][0.0]>
+                <[float64][P3][0.0]>
+                <[float64][Position][0.0]>
+            >
+            <[output_free][ServoFlapsOutput][]
+                <[string8][Input][ServoFlaps.Output]>
+            >
+
+            // flaps end
+
+
+            // gear start
+			
+
+            // wheelbrake
+            <[input_default][BrakeInput][]
+                <[string8][Message][Controls.WheelBrake]>
+            >
+            <[input_default][LeftBrakeInput][]
+                <[string8][Message][Controls.WheelBrake.Left]>
+            >
+            <[input_default][RightBrakeInput][]
+                <[string8][Message][Controls.WheelBrake.Right]>
+            >
+            <[input_switch][ParkingBrakeInput][]
+                <[string8][Message][Controls.ParkingBrake]>
+                <[float64][Value][0.0]>
+            >
+            <[sender][SenderParkingBrake][]
+                <[string8][Input][ParkingBrakeInput.Output]>
+                <[string8][Message][Aircraft.ParkingBrake]>
+                <[string8][Qualifiers][ discrete ]>
+            >
+            <[servoclassic][ParkingBrake][]
+                <[string8][Input][ParkingBrakeInput.Output]>
+                <[float64][Speed][2.0]>
+                <[float64][P0][0.0]>
+                <[float64][P1][1.0]>
+                <[float64][P2][0.0]>
+                <[float64][P3][0.0]>
+                <[float64][Position][0.0]>
+            >
+            <[output_free][ParkingBrakeOutput][]
+                <[string8][Input][ParkingBrake.Output]>
+            >
+            <[event_sound][ParkingBrakePullSound][]
+            >
+            <[event_sound][ParkingBrakeReleaseSound][]
+            >
+            <[event_edge_rising][ParkingBrake_PullSound][]
+                <[string8][Input][ParkingBrake.Output]>
+                <[string8][Events][ ParkingBrakePullSound.Trigger ]>
+                <[float64][Value][0.0]>
+                <[float64][Threshold][0.8]>
+            >
+            <[event_edge_falling][ParkingBrake_ReleaseSound][]
+                <[string8][Input][ParkingBrake.Output]>
+                <[string8][Events][ ParkingBrakeReleaseSound.Trigger ]>
+                <[float64][Value][0.0]>
+                <[float64][Threshold][0.1]>
+            >
+            <[maximum][LeftBrakeMix][]
+                <[string8][Inputs][ LeftBrakeInput.Output ParkingBrake.Output ]>
+            >
+            <[maximum][RightBrakeMix][]
+                <[string8][Inputs][ RightBrakeInput.Output ParkingBrake.Output ]>
+            >
+            <[servoclassic][LeftBrakePedal][]
+                <[string8][Input][LeftBrakeMix.Output]>
+                <[float64][Speed][3.0]>
+                <[float64][P1][1.0]>
+                <[float64][Position][0.0]>
+            >
+            <[servoclassic][RightBrakePedal][]
+                <[string8][Input][RightBrakeMix.Output]>
+                <[float64][Speed][3.0]>
+                <[float64][P1][1.0]>
+                <[float64][Position][0.0]>
+            >
+            <[output_free][LeftBrakePedalOutput][]
+                <[string8][Input][LeftBrakePedal.Output]>
+            >
+            <[output_free][RightBrakePedalOutput][]
+                <[string8][Input][RightBrakePedal.Output]>
+            >
+            <[polynomial][LeftBrake][]
+                <[string8][Input][LeftBrakePedal.Output]>
+                <[float64array][Coefficients][ 0.5 0.5 0.0 ]>
+            >
+            <[polynomial][RightBrake][]
+                <[string8][Input][RightBrakePedal.Output]>
+                <[float64array][Coefficients][ 0.5 0.5 0.0 ]>
+            >
+
+            // gear end
+			
+            // animations start
+
+            // doors
 
             // animations end
 
@@ -1277,10 +1367,10 @@
                 <[tmvector3d][R0][0.08962 4.972 0.8193]>
                 <[tmvector3d][X0][ 0.7 0.7 0.0 ]>
                 <[tmvector3d][Color][ 1.0 0.3 0.1 1.0 ]>
-                <[float64][Brightness][ 0.5 ]>
-                <[float64][ConeCenter][-0.89]>
-                <[float64][ConeCutoff][-0.99]>
-                <[float64][Size][1.0]>
+                <[float64][Brightness][ 0.1 ]>
+                <[float64][ConeCenter][1.0]>
+                <[float64][ConeCutoff][-0.91]>
+                <[float64][Size][50.0]>
                 <[float64][Falloff][8.0]>
                 <[string8][InputModulation][NavigationLightOn.Output]>
             >
@@ -1326,14 +1416,14 @@
                 <[tmvector3d][Color][ 0.2 0.7 0.1 1.0 ]>
                 <[float64][Brightness][ 0.1 ]>
                 <[float64][ConeCenter][1.0]>
-                <[float64][ConeCutoff][0.0]>
+                <[float64][ConeCutoff][-0.91]>
                 <[float64][Size][50.0]>
                 <[float64][Falloff][8.0]>
                 <[string8][InputModulation][NavigationLightOn.Output]>
             >
 			
             <[rigidbodygraphics][Fuselage][]
-				<[string8][GeometryList][ Fuselage GlassExterior GlassInterior Stabilizer RudderSupport Nacelle LeftAileronLink RightAileronLink LeftDoor LeftDoorLevers RightDoor RightDoorLevers RearDoors Antenna Antennas FootStands GearDetails ]>
+				<[string8][GeometryList][ Fuselage GlassExterior GlassInterior Stabilizer RudderSupport Nacelle LeftDoor LeftDoorLevers RightDoor RightDoorLevers RearDoors Antenna Antennas FootStands GearDetails ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
             >
@@ -1388,6 +1478,14 @@
                 <[tmvector3d][Pivot][-0.8279 4.8343 0.7449]>
                 <[float64][Scaling][1.0]>
             >
+            <[linkagegraphics][LeftAileronLink][]
+                <[string8][Graphics0][LeftWing]>
+                <[string8][Graphics1][LeftAileron]>
+                <[string8][GeometryList][ LeftAileronLink ]>
+                <[tmvector3d][Joint0][-0.7620 4.226 0.6781]>
+                <[tmvector3d][Joint1][-0.8701 4.226 0.6563]>
+                <[uint32][AttachTo][1]>
+            >			
             <[hingedbodygraphics][LeftFlap][]
                 <[uint32][PositionID][LeftWing.R]>
                 <[uint32][OrientationID][LeftWing.Q]>
@@ -1412,6 +1510,14 @@
                 <[tmvector3d][Pivot][-0.8279 -4.8343 0.7449]>
                 <[float64][Scaling][1.0]>
             >
+            <[linkagegraphics][RightAileronLink][]
+                <[string8][Graphics0][RightWing]>
+                <[string8][Graphics1][RightAileron]>
+                <[string8][GeometryList][ RightAileronLink ]>
+                <[tmvector3d][Joint0][-0.7620 -4.226 0.6781]>
+                <[tmvector3d][Joint1][-0.8701 -4.226 0.6563]>
+                <[uint32][AttachTo][1]>
+            >				
             <[hingedbodygraphics][RightFlap][]
                 <[uint32][PositionID][RightWing.R]>
                 <[uint32][OrientationID][RightWing.Q]>
@@ -1430,6 +1536,38 @@
                 <[tmvector3d][Pivot][-3.836 0.0 0.1608]>
                 <[float64][Scaling][1.0]>
             >
+            <[hingedbodygraphics][LeftTrimTab][]
+                <[string8][GeometryList][ LeftTrimTab ]>
+                <[uint32][InputID][PitchTrimDisplay.Output]>
+                <[tmvector3d][Axis][ -0.166138 -0.986101 0.001341 ]>
+                <[tmvector3d][Pivot][-4.2529 0.2141 0.1684]>
+                <[float64][Scaling][1.0]>
+                <[string8][Graphics][Elevator]>				
+            >
+            <[linkagegraphics][LeftTrimTabLink][]
+                <[string8][Graphics0][Elevator]>
+                <[string8][Graphics1][LeftTrimTab]>
+                <[string8][GeometryList][ LeftTrimTabLink ]>
+                <[tmvector3d][Joint0][-4.080 0.1573 0.1717]>
+                <[tmvector3d][Joint1][-4.282 0.2247 0.2087]>
+                <[uint32][AttachTo][1]>
+            >			
+            <[hingedbodygraphics][RightTrimTab][]
+                <[string8][GeometryList][ RightTrimTab ]>
+                <[uint32][InputID][PitchTrimDisplay.Output]>
+                <[tmvector3d][Axis][ 0.166138 -0.986101 -0.001341 ]>
+                <[tmvector3d][Pivot][-4.2529 -0.2141 0.1684]>
+                <[float64][Scaling][1.0]>
+                <[string8][Graphics][Elevator]>				
+            >
+            <[linkagegraphics][RightTrimTabLink][]
+                <[string8][Graphics0][Elevator]>
+                <[string8][Graphics1][RightTrimTab]>
+                <[string8][GeometryList][ RightTrimTabLink ]>
+                <[tmvector3d][Joint0][-4.080 -0.1573 0.1717]>
+                <[tmvector3d][Joint1][-4.282 -0.2247 0.2087]>
+                <[uint32][AttachTo][1]>
+            >			
             <[hingedbodygraphics][Rudder][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
@@ -1467,7 +1605,7 @@
             <[rigidbodygraphics][Cockpit][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-				<[string8][GeometryList][ Cockpit PilotSeat SeatsBelts LuggageNet Panel Instruments GaugeGlass YokeMask FuelSelector ManifoldNeedle CarbTemp1Needle CarbTemp2Needle AttitudeBall2 AttitudeSign2Needle ]>
+				<[string8][GeometryList][ Cockpit PilotSeat SeatsBelts LuggageNet Panel Instruments GaugeGlass YokeMask FuelSelector CarbTemp1Needle CarbTemp2Needle AttitudeBall2 AttitudeSign2Needle ]>
                 <[string8][InputIllumination0][PanelLighting.Output]>
             >
 			
@@ -1588,17 +1726,17 @@
                 <[uint32][InputID][MixtureLever.Output]>
                 <[tmvector3d][Axis][-1.0 0.0 0.0]>
                 <[float64][Scaling][-0.035]>
-                <[float64][Offset][0.0]>
+                <[float64][Offset][0.035]>
                 <[string8][InputIllumination0][PanelLighting.Output]>
             >
             <[movinggraphics][LeverPropSpeed][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[string8][GeometryList][ PropSpeedLever ]>
-                <[uint32][InputID][PropSpeedInput.Output]>
+                <[uint32][InputID][PropellerSpeedLever.Output]>
                 <[tmvector3d][Axis][-1.0 0.0 0.0]>
                 <[float64][Scaling][-0.035]>
-                <[float64][Offset][0.0]>
+                <[float64][Offset][0.035]>
                 <[string8][InputIllumination0][PanelLighting.Output]>
             >			
 			//airspeed needle
@@ -1842,7 +1980,7 @@
             >
             // oil temperature
             <[graphics_input][OilTemperatureCelcius][]
-                <[uint32][InputID][OilTemperature.Output]>
+                <[uint32][InputID][EngineOilTemperature.Output]>
                 <[string8][Offset][-273.15]>
             >
             <[graphics_linear_interpolation][OilTempNeedleMapping][]
@@ -1852,14 +1990,50 @@
             <[hingedbodygraphics][OilTempMeter][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[string8][GeometryList][ OilTempNeedle OilPressNeedle ]>
+                <[string8][GeometryList][ OilTempNeedle ]>
                 <[tmvector3d][Axis][1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][ 0.3037 0.2748 0.1625]>
                 <[float64][Scaling][1.0]>
                 <[string8][Input][OilTempNeedleMapping.Output]>
                 <[string8][InputIllumination0][PanelLighting.Output]>
             >
-			
+            // oil pressure
+            <[graphics_input][OilPressureInput][]
+                <[uint32][InputID][EngineOilPressure.Output]>
+                <[string8][Offset][0.0]>
+            >
+            <[graphics_linear_interpolation][OilPressureNeedleMapping][]
+                <[string8][Input][OilPressureInput.Output]>
+                <[tmvector2d][Map][ (0.0 0.0) (60.0 0.2) (80.0 0.42) (100.0 0.7) (130.0 0.94) (200.0 0.97) ]>
+            >
+            <[hingedbodygraphics][OilPressMeter][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[string8][GeometryList][ OilPressNeedle ]>
+                <[tmvector3d][Axis][1.0 0.0 0.0]>
+                <[tmvector3d][Pivot][ 0.3037 0.2748 0.1625]>
+                <[float64][Scaling][1.0]>
+                <[string8][Input][OilPressureNeedleMapping.Output]>
+                <[string8][InputIllumination0][PanelLighting.Output]>
+            >
+            // manifold pressure
+            <[graphics_input][EngineManifoldPressure][]
+                <[uint32][InputID][EngineManifoldPressure.Output]>
+            >			
+            <[graphics_linear_interpolation][EngineManifoldPressureMapping][]
+                <[string8][Input][EngineManifoldPressure.Output]>
+                <[tmvector2d][Map][(0.0 0.0) (33863.88 0.7567) (152387.46 6.28) ]>
+            >			
+            <[hingedbodygraphics][ManifoldPressureNeedle][]
+                <[uint32][PositionID][Fuselage.R]>
+                <[uint32][OrientationID][Fuselage.Q]>
+                <[string8][GeometryList][ ManifoldNeedle ]>
+                <[string8][Input][EngineManifoldPressureMapping.Output]>
+                <[tmvector3d][Axis][ 1.0 0.0 0.0 ]>
+                <[tmvector3d][Pivot][ 0.3052 0.2184 0.2453 ]>
+                <[float64][Scaling][1.0]>
+                <[string8][InputIllumination0][PanelLighting.Output]>
+            >			
             // pilot body animation
             <[graphics_input][RightHandInput][]
                 <[uint32][InputID][ServoThrottle.Output]>
