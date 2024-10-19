@@ -1766,7 +1766,7 @@
                 <[uint32][InputID][AltimeterNeedle.Output]>
                 <[tmvector3d][Axis][1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][0.3043 0.1945 0.2452]>
-                <[float64][Scaling][0.020614]>
+                <[float64][Scaling][0.0020614]>
                 <[float64][Offset][0.9599]>
             >
             <[hingedbodygraphics][Altimeter1000][]
@@ -1776,7 +1776,7 @@
                 <[uint32][InputID][AltimeterNeedle.Output]>
                 <[tmvector3d][Axis][1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][0.3043 0.1945 0.2452]>
-                <[float64][Scaling][0.0020614]>
+                <[float64][Scaling][0.00020614]>
                 <[float64][Offset][-0.6108]>
             >
             <[hingedbodygraphics][Altimeter10000][]
@@ -1786,7 +1786,7 @@
                 <[uint32][InputID][AltimeterNeedle.Output]>
                 <[tmvector3d][Axis][1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][0.3043 0.1945 0.2452]>
-                <[float64][Scaling][0.00020614]>
+                <[float64][Scaling][0.020614]>
                 <[float64][Offset][0.0]>
             >
             <[graphics_input][PressureSetting][]
