@@ -1,25 +1,29 @@
 <[file][][]
-    <[object][][]
-        <[int][Version][220]>
-        <[vec32array][ContactSpheres][ (0.316 -0.903 -0.965 0.284) (0.316 0.903 -0.965 0.284) (-4.305 0.000 -0.365 0.141) ]>
-        <[string8][ICAO][M7]>
+    <[modelinformation][][]
+        <[int32][Version][220]>
+        <[list_vector4_float64][ContactSpheres][ (0.316 -0.903 -0.965 0.284) (0.316 0.903 -0.965 0.284) (-4.305 0.000 -0.365 0.141) ]>
+        <[stringt8c][ICAO][M7]>
         <[string8][DisplayName][Maule M-6]>
         <[string8][DisplayNameFull][Maule M-6-235]>
-        <[localized_text_list][Descriptions][]
-            <[localized_text][][]
-                <[string8][Language][en]>
+        <[list_localized_text][Descriptions][]
+            <[localized_text][element][0]
+                <[string8u][Language][en]>
                 <[string8][Text][The Maule is a family of single-engine light aircraft that has been manufactured in the United States since the mid-1980s. Made by Krzysztof Kaniewski. 3D model: RigModels.com.]>
             >
-            <[localized_text][][]
-                <[string8][Language][de]>
+            <[localized_text][element][1]
+                <[string8u][Language][de]>
                 <[string8][Text][Die Maule ist eine Familie von einmotorigen Leichtflugzeugen, die seit Mitte der 1980er Jahre in den Vereinigten Staaten hergestellt wird. Hergestellt von Krzysztof Kaniewski. 3D-Modell: RigModels.com.]>
-            >			
+            >
+            <[localized_text][element][2]
+                <[string8u][Language][pl]>
+                <[string8][Text][Maule to rodzina jednosilnikowych lekkich samolotów produkowanych w Stanach Zjednoczonych od połowy lat 80. ubiegłego wieku. Wykonany przez Krzysztofa Kaniewskiego. Model 3D: RigModels.com.]>
+			>
         >
         <[float64][MaximumTakeoffMass][1134.0]> //2,500 LBS empty 1,425 LBS fuel 40 GAL
         <[float64][WingSpan]          [9.9]>
-        <[uint]   [Year]              [1984]>
-        <[uint]   [UnitsBuilt]        [500]>
-        <[uint]   [EngineCount]       [1]>
+        <[uint32] [Year]              [1984]>
+        <[uint32] [UnitsBuilt]        [500]>
+        <[uint32] [EngineCount]       [1]>
         <[float64][EnginePower]       [193882]>
         <[float64][MinimumAirspeed]   [21.5]> //38 KIAS
         <[float64][ApproachAirspeed]  [28.0]>
@@ -30,10 +34,10 @@
         <[float64][MaximumAltitude]   [6306.0]> //20,000 FT
         <[float64][MaximumSpeed]      [79.0]>
         <[float64][MaximumRange]      [2276000.0]> //360 NM
-        <[tmvector2d][FlapAirspeedRange][ 21.5 41.5 ]>
-        <[tmvector2d][NormalAirspeedRange][ 21.5 64.0 ]>
-        <[tmvector2d][CautionAirspeedRange][ 64.0 79.0 ]>
-        <[tmvector2d][FlapSettings][ (0.00 -0.122173) (0.33 0.000000) (0.67 0.418879) (1.00 0.698132) ]>
+        <[vector2_float64][FlapAirspeedRange][ 21.5 41.5 ]>
+        <[vector2_float64][NormalAirspeedRange][ 21.5 64.0 ]>
+        <[vector2_float64][CautionAirspeedRange][ 64.0 79.0 ]>
+        <[list_vector2_float64][FlapSettings][ (0.00 -0.122173) (0.33 0.000000) (0.67 0.418879) (1.00 0.698132) ]>
         <[string8][FlapQualifier][ ]>
         <[string8][Tags][ airplane piston flaps general_aviation tailgear autopilot utility ]>
         <[string8][Pilot][pilot_pamela]>

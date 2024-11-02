@@ -1759,7 +1759,7 @@
                 <[string8][InputIllumination0][PanelLighting.Output]>
             >
 			// altimeter needles
-            <[hingedbodygraphics][Altimeter100][]
+            <[hingedbodygraphics][Altimeter1000][]
                 <[string8][GeometryList][ AltimeterNeedle100  ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
@@ -1769,7 +1769,7 @@
                 <[float64][Scaling][0.0020614]>
                 <[float64][Offset][0.9599]>
             >
-            <[hingedbodygraphics][Altimeter1000][]
+            <[hingedbodygraphics][Altimeter10000][]
                 <[string8][GeometryList][ AltimeterNeedle1000 ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
@@ -1779,7 +1779,7 @@
                 <[float64][Scaling][0.00020614]>
                 <[float64][Offset][-0.6108]>
             >
-            <[hingedbodygraphics][Altimeter10000][]
+            <[hingedbodygraphics][Altimeter100][]
                 <[string8][GeometryList][ AltimeterNeedle10000 ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
