@@ -1,6 +1,8 @@
 # maule6
 Maule M-6-235 for Aerofly FS4
 
+THE MODEL HAS NO FUNCTIONAL COCKPIT AND NO DEVELOPMENT IS PLANNED
+
 The Maule is a family of single-engine light aircraft that has been manufactured in the United States since the mid-1980s.
  
 Original 3D design files: https://rigmodels.com/
