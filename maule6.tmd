@@ -31,7 +31,7 @@
             <[camera_head][CameraPilot][]
                 <[string8][Tags][cockpit pilot]>
                 <[string8][Body][Fuselage]>
-                <[tmvector3d][R0][ -0.101 0.229 0.488 ]>
+                <[tmvector3d][R0][ -0.17 0.27 0.44 ]>
                 <[tmvector3d][Direction][ 1.0 0.0 0.0 ]>
                 <[float64][Kf][40.0]>
                 <[float64][Df][1.00]>
